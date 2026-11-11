@@ -1,0 +1,255 @@
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.navbar h2 {
+  color: #25245c;
+}
+
+.navbar h2 span {
+  color: #7357e8;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Hero */
+
+.hero {
+  min-height: 350px;
+  padding: 70px 10%;
+  background: linear-gradient(120deg, #28265e, #7456e8);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 17px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.hero-btn {
+  background: white;
+  color: #5d48ca;
+  padding: 13px 25px;
+  text-decoration: none;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+/* Statistics */
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 35px 10%;
+  background: white;
+  text-align: center;
+}
+
+.stats h2 {
+  color: #684fe0;
+  font-size: 30px;
+  margin: 0;
+}
+
+/* Common Sections */
+
+.section {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.section h2 {
+  color: #28265e;
+  font-size: 30px;
+}
+
+.section > p {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* Search */
+
+.search-box {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.search-box input,
+.search-box select {
+  padding: 13px;
+  width: 280px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+}
+
+/* Skill Cards */
+
+.skill-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  text-align: left;
+}
+
+.skill-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+}
+
+.category {
+  background: #eee9ff;
+  color: #654ad1;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.skill-card h3 {
+  margin-top: 22px;
+  color: #29265c;
+}
+
+.skill-card p {
+  color: #777;
+  min-height: 45px;
+}
+
+.student-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.student-info small {
+  color: #777;
+  overflow-wrap: anywhere;
+}
+
+/* Buttons */
+
+button {
+  background: #684fe0;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #4934b5;
+}
+
+/* Share Form */
+
+.share-section {
+  background: #f3f1ff;
+}
+
+.skill-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-form input,
+.skill-form select,
+.skill-form textarea {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.skill-form textarea {
+  height: 110px;
+  resize: vertical;
+}
+
+.empty {
+  text-align: center;
+  color: #777;
+  grid-column: 1 / -1;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #25234f;
+  color: white;
+}
+
+footer p {
+  color: #ccc;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .stats {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input,
+  .search-box select {
+    width: auto;
+  }
+}
