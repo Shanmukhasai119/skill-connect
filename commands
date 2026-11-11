@@ -1,0 +1,12 @@
+mkdir skillconnect
+cd skillconnect
+mkdir backend
+cd backend
+npm init -y
+npm install express mongoose cors
+code .
+npm create vite@latest frontend -- --template react
+cd frontend 
+cd src
+npm install
+npm run dev
