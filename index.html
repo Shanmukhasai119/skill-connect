@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skill Connect</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        Skill<span>Connect</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#skills">Find Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#profile">Profile</a>
+    </nav>
+
+    <button class="nav-btn" onclick="openProfileForm()">
+        Create Profile
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Connect. Learn. <span>Collaborate.</span>
+        </h1>
+
+        <p>
+            Skill Connect helps students find people with similar
+            interests, share skills, and build teams for projects.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button onclick="scrollToSkills()">
+                Find Students
+            </button>
+
+            <button class="secondary-btn"
+                    onclick="openProfileForm()">
+                Add Your Skills
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="dashboard">
+
+    <div class="stat-card">
+
+        <div class="stat-icon">👨‍🎓</div>
+
+        <h2 id="studentCount">0</h2>
+
+        <p>Students</p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">💻</div>
+
+        <h2 id="skillCount">0</h2>
+
+        <p>Skills</p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">🚀</div>
+
+        <h2 id="projectCount">0</h2>
+
+        <p>Projects</p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">🤝</div>
+
+        <h2 id="connectionCount">0</h2>
+
+        <p>Connections</p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FIND SKILLS ================= -->
+
+<section id="skills" class="section">
+
+    <div class="section-title">
+
+        <h2>Find Students by Skills</h2>
+
+        <p>
+            Search for students who have the skills you need.
+        </p>
+
+    </div>
+
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="skillSearch"
+            placeholder="Search skill e.g. JavaScript, Python, Design..."
+            onkeyup="searchStudents()"
+        >
+
+        <button onclick="searchStudents()">
+            Search
+        </button>
+
+    </div>
+
+
+    <div id="studentList" class="student-grid"></div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects" class="section project-section">
+
+    <div class="section-title">
+
+        <h2>Student Projects</h2>
+
+        <p>
+            Collaborate with students and build projects together.
+        </p>
+
+    </div>
+
+
+    <button class="add-project-btn"
+            onclick="openProjectForm()">
+        + Create Project
+    </button>
+
+
+    <div id="projectList" class="project-grid"></div>
+
+</section>
+
+
+<!-- ================= PROFILE ================= -->
+
+<section id="profile" class="section profile-section">
+
+    <div class="section-title">
+
+        <h2>Create Your Skill Profile</h2>
+
+        <p>
+            Share your skills so other students can connect with you.
+        </p>
+
+    </div>
+
+
+    <div class="profile-card">
+
+        <form id="profileForm">
+
+            <div class="form-group">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>College</label>
+
+                <input
+                    type="text"
+                    id="college"
+                    placeholder="Enter your college"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Course</label>
+
+                <input
+                    type="text"
+                    id="course"
+                    placeholder="Example: B.Tech CSE"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Skills</label>
+
+                <input
+                    type="text"
+                    id="skillsInput"
+                    placeholder="Example: HTML, CSS, JavaScript, Python"
+                    required
+                >
+
+                <small>
+                    Separate multiple skills using commas.
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>About You</label>
+
+                <textarea
+                    id="about"
+                    placeholder="Tell something about yourself..."
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="submit-btn">
+                Create Profile
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECT MODAL ================= -->
+
+<div id="projectModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeProjectForm()">
+            &times;
+        </span>
+
+        <h2>Create New Project</h2>
+
+
+        <form id="projectForm">
+
+            <div class="form-group">
+
+                <label>Project Name</label>
+
+                <input
+                    type="text"
+                    id="projectName"
+                    placeholder="Example: E-Commerce Website"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Description</label>
+
+                <textarea
+                    id="projectDescription"
+                    placeholder="Describe your project..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Required Skills</label>
+
+                <input
+                    type="text"
+                    id="requiredSkills"
+                    placeholder="HTML, CSS, JavaScript"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Project Type</label>
+
+                <select id="projectType">
+
+                    <option>Academic</option>
+
+                    <option>Personal</option>
+
+                    <option>Hackathon</option>
+
+                    <option>Startup</option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit" class="submit-btn">
+                Create Project
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDENT MODAL ================= -->
+
+<div id="studentModal" class="modal">
+
+    <div class="modal-content student-detail">
+
+        <span class="close"
+              onclick="closeStudentModal()">
+            &times;
+        </span>
+
+        <div id="studentDetails"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="logo">
+        Skill<span>Connect</span>
+    </div>
+
+    <p>
+        Connect students. Share skills. Build the future.
+    </p>
+
+    <p>
+        © 2026 Skill Connect
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
